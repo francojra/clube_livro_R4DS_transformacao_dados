@@ -12,3 +12,8 @@
 
 library(tidyverse)
 library(dados)
+
+# Conhecer a base de dados -----------------------------------------------------------------------------------------------------------------
+
+voos # Cada linha representa um voo
+?voos # Ver documentação sobre os dados
