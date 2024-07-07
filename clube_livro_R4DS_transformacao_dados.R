@@ -31,3 +31,12 @@ filter() # Função que trabalha com linhas
 ## O retorno é uma base de dados filtrada
 
 filter(voos, destino == "IAH") 
+
+## pipe: |> ou %>%
+
+voos |>
+  filter(destino == "IAH")
+
+voos |>
+  filter(destino == "IAH") |>
+  select(destino, ano, mes, dia, atraso_chegada) # Seleção de colunas
