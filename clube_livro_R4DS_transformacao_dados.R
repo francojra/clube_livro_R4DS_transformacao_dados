@@ -17,4 +17,17 @@ library(dados)
 
 voos # Cada linha representa um voo
 ?voos # Ver documentação sobre os dados
-glimpse(voos)
+glimpse(voos) # Número de linhas e colunas, tipos de variáveis
+
+# Estrutura do dplyr -----------------------------------------------------------------------------------------------------------------------
+
+## funcao(base_de_dados, quais_colunas_vamos_usar)
+## resultado: base de dados alterada
+
+voos # Base de dados original
+filter() # Função que trabalha com linhas
+
+## Função + base de dados + coluna + linha a ser filtrada
+## O retorno é uma base de dados filtrada
+
+filter(voos, destino == "IAH") 
