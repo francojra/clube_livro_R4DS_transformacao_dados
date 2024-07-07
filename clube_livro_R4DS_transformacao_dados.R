@@ -37,6 +37,13 @@ filter(voos, destino == "IAH")
 voos |>
   filter(destino == "IAH")
 
+## Exemplo
+
 voos |>
   filter(destino == "IAH") |>
-  select(destino, ano, mes, dia, atraso_chegada) # Seleção de colunas
+  select(destino, ano, mes, dia, atraso_chegada) |> # Seleção de colunas
+  group_by(ano, mes, dia) |> # Seleção de grupos
+  summarise(                   
+    media_atraso_chegada = mean(atraso_chegada, na.rm = T)) # Função para fazer resumos
+
+## O na.rm = T é para quando existir alguma informação faltante ele continuar calculando
