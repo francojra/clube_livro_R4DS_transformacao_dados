@@ -17,3 +17,4 @@ library(dados)
 
 voos # Cada linha representa um voo
 ?voos # Ver documentação sobre os dados
+glimpse(voos)
