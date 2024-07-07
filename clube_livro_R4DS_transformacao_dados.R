@@ -39,11 +39,17 @@ voos |>
 
 ## Exemplo
 
-voos |>
+diario_atraso_chegada <- voos |>
   filter(destino == "IAH") |>
   select(destino, ano, mes, dia, atraso_chegada) |> # Seleção de colunas
   group_by(ano, mes, dia) |> # Seleção de grupos
   summarise(                   
     media_atraso_chegada = mean(atraso_chegada, na.rm = T)) # Função para fazer resumos
 
-## O na.rm = T é para quando existir alguma informação faltante ele continuar calculando
+## O na.rm = T é para quando existir alguma informação faltante 
+## ele continuar calculando
+
+## Quando calcula os resumos, é necessário informar um novo nome 
+## para a nova base de dados
+
+view(diario_atraso_chegada)
