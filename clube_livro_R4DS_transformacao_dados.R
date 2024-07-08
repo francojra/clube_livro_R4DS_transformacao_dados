@@ -53,3 +53,13 @@ diario_atraso_chegada <- voos |>
 ## para a nova base de dados
 
 view(diario_atraso_chegada)
+
+# Linhas -----------------------------------------------------------------------------------------------------------------------------------
+
+## Funções
+
+filter()
+distinct()
+arrange()
+count()
+
