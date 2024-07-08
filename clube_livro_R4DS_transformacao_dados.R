@@ -187,3 +187,14 @@ voos |>
   mutate(atraso_saida_hora = atraso_saida/60) |>  # Atraso em horas
   view()
 
+## Ordenar por ordem alfabética
+
+voos |>
+  select(ano, mes, dia, origem, atraso_saida) |>
+  arrange(origem) |>
+  view()
+
+voos |>
+  select(ano, mes, dia, origem, atraso_saida) |>
+  arrange(origem, atraso_saida) |>
+  view()
