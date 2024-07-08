@@ -178,3 +178,12 @@ voos |>
   select(dia, mes, atraso_saida) |>
   arrange(desc(atraso_saida)) |>
   head(10)
+
+## Quais são os 10 maiores atrasos?
+
+voos |>
+  arrange(atraso_saida) |> 
+  head(10) |>
+  mutate(atraso_saida_hora = atraso_saida/60) |>  # Atraso em horas
+  view()
+
