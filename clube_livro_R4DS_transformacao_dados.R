@@ -100,6 +100,8 @@ voos |>
   filter(mes == 1 | mes == 2) |>
   view()
 
+## Voos que partiram no primeiro semestre
+
 ## Operador %in% : Filtrar conjunto de linhas
 
 voos |>
