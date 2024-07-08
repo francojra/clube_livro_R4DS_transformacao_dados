@@ -239,3 +239,9 @@ voos |>
   count(mes) |>
   ggplot() +
   geom_col(aes(x = mes, y = n))
+
+voos |>
+  count(companhia_aerea, sort = T) |>
+  head(10) |>
+  ggplot() +
+  geom_col(aes(x = companhia_aerea, y = n))
