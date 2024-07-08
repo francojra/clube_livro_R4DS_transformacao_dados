@@ -92,3 +92,20 @@ voos |>
   filter(mes == 1, dia == 1) |>
   view()
 
+## Voos que partiram em janeiro ou fevereiro
+
+## Operador OR: |
+
+voos |>
+  filter(mes == 1 | mes == 2) |>
+  view()
+
+## Operador %in% : Filtrar conjunto de linhas
+
+voos |>
+  filter(mes %in% c(1, 3)) |>
+  view()
+
+voos |>
+  filter(mes %in% c(1:6)) |>
+  view()
