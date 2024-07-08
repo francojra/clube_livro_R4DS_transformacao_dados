@@ -54,12 +54,12 @@ diario_atraso_chegada <- voos |>
 
 view(diario_atraso_chegada)
 
-# Linhas -----------------------------------------------------------------------------------------------------------------------------------
+# Funções dplyr ---------------------------------------------------------------------------------------------------------------------------------
 
 ## Funções
 
-filter()
-distinct()
-arrange()
-count()
+filter() # Filtrar linhas
+distinct() # Busca valores únicos distintos
+arrange() # Ordenar a base de dados
+count() # Conta as linhas por grupo
 
