@@ -198,3 +198,32 @@ voos |>
   select(ano, mes, dia, origem, atraso_saida) |>
   arrange(origem, atraso_saida) |>
   view()
+
+# Função distinct --------------------------------------------------------------------------------------------------------------------------
+
+## Ajuda a achar as linhas únicas em um conjunto de dados ou grupos únicos
+
+## A função unique() é do R base
+
+unique(voos$origem) # Não usa mais de uma coluna como o distinct
+
+voos |>
+  distinct() # Se houver repetição, essa função deixa apenas com os valores únicos
+
+voos |>
+  distinct(origem, destino)
+
+voos |>
+  distinct(origem, destino) |>
+  arrange(origem, destino)
+
+voos |>
+  distinct(origem, destino, .keep_all = TRUE) # Para visualizar todas as colunas
+
+# Função count -----------------------------------------------------------------------------------------------------------------------------
+
+## Para cada uma das combinações origem-destino, quantos voos sairam?
+
+voos |>
+  count(origem, destino) # Dá um resultado similar ao que tem no distinct com adição
+## de uma coluna com valores de n
