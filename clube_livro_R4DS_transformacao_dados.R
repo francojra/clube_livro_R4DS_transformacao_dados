@@ -173,3 +173,8 @@ voos |>
   select(dia, mes, atraso_saida) |>
   arrange(-atraso_saida) |>
   view()
+
+voos |>
+  select(dia, mes, atraso_saida) |>
+  arrange(desc(atraso_saida)) |>
+  head(10)
