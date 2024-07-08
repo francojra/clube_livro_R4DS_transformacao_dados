@@ -61,7 +61,9 @@ distinct() # Busca valores únicos distintos
 arrange() # Ordenar a base de dados
 count() # Conta as linhas por grupo
 
-# Operadores dplyr -------------------------------------------------------------------------------------------------------------------------
+# Função filter ----------------------------------------------------------------------------------------------------------------------------
+
+## Operadores dplyr 
 
 # == -> Igual a
 # != -> Diferente de
@@ -134,5 +136,40 @@ voos |>
 ## Erro comum 2
 
 voos |>
-  filter(mes == 1|2) |>
+  filter(mes == 1 | 2) |>
   distinct(mes) # O distinct mostrará que não houve mudança em mês
+
+## Correto
+
+voos |>
+  filter(mes == 1 | mes == 2) |>
+  distinct(mes) 
+
+## ou...
+
+voos |>
+  filter(mes %in% c(1, 2)) |>
+  distinct(mes) 
+
+# Função arrange ---------------------------------------------------------------------------------------------------------------------------
+
+voos |>
+  arrange(atraso_saida) |> # Ordem crescente
+  view()
+
+voos |>
+  select(dia, mes, atraso_saida) |>
+  arrange(dia, mes, atraso_saida) |> 
+  view()
+
+## Forma decrescente
+
+voos |>
+  select(dia, mes, atraso_saida) |>
+  arrange(desc(atraso_saida)) |>
+  view()
+
+voos |>
+  select(dia, mes, atraso_saida) |>
+  arrange(-atraso_saida) |>
+  view()
