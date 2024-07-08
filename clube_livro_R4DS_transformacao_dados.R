@@ -72,3 +72,11 @@ count() # Conta as linhas por grupo
 # >= -> Maior e igual a
 # <= -> Menor e igual a
 
+voos |>
+  filter(atraso_saida > 120) |>
+  view()
+
+voos |>
+  filter(atraso_saida >= 120) |>
+  view()
+
