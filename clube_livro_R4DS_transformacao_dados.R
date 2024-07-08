@@ -80,3 +80,15 @@ voos |>
   filter(atraso_saida >= 120) |>
   view()
 
+## Voos que partiram dia 1º de janeiro
+
+## Operador AND: & e ,
+
+voos |>
+  filter(mes == 1 & dia == 1) |>
+  view()
+
+voos |>
+  filter(mes == 1, dia == 1) |>
+  view()
+
