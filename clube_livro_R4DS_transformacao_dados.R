@@ -56,14 +56,12 @@ view(diario_atraso_chegada)
 
 # Funções dplyr ---------------------------------------------------------------------------------------------------------------------------------
 
-## Funções
-
 filter() # Filtrar linhas
 distinct() # Busca valores únicos distintos
 arrange() # Ordenar a base de dados
 count() # Conta as linhas por grupo
 
-## Operadores
+# Operadores dplyr -------------------------------------------------------------------------------------------------------------------------
 
 # == -> Igual a
 # != -> Diferente de
@@ -111,3 +109,30 @@ voos |>
 voos |>
   filter(mes %in% c(1:6)) |>
   view()
+
+## Operador NOT: !
+
+voos |>
+  filter(!mes %in% c(1, 2)) # Filtrar todas as linhas que os meses não sejam 1 e 2
+
+# Erros comuns ao usar o filter ------------------------------------------------------------------------------------------------------------
+
+## Erro comum 1
+
+voos |>
+  filter(mes = 1)
+
+# Error in `filter()`:
+# ! We detected a named
+#   input.
+# ℹ This usually means that
+#   you've used `=` instead of
+#   `==`.
+# ℹ Did you mean `mes == 1`?
+# Run `rlang::last_trace()` to see where the error occurred.
+
+## Erro comum 2
+
+voos |>
+  filter(mes == 1|2) |>
+  distinct(mes) # O distinct mostrará que não houve mudança em mês
