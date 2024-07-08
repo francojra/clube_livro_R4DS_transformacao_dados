@@ -227,3 +227,15 @@ voos |>
 voos |>
   count(origem, destino) # Dá um resultado similar ao que tem no distinct com adição
 ## de uma coluna com valores de n
+
+voos |>
+  count(origem, destino, sort = T) # O sort ordena os valores de n do maior para o menor
+## Permite saber qual os voos mais frequentes
+
+voos |>
+  count(mes)
+
+voos |>
+  count(mes) |>
+  ggplot() +
+  geom_col(aes(x = mes, y = n))
