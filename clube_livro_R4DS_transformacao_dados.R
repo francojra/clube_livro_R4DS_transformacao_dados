@@ -63,3 +63,12 @@ distinct() # Busca valores únicos distintos
 arrange() # Ordenar a base de dados
 count() # Conta as linhas por grupo
 
+## Operadores
+
+# == -> Igual
+# != -> Diferente
+# > -> Maior
+# < -> Menor
+# >= -> Maior igual
+# <= -> Menor igual
+
