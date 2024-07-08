@@ -65,10 +65,10 @@ count() # Conta as linhas por grupo
 
 ## Operadores
 
-# == -> Igual
-# != -> Diferente
-# > -> Maior
-# < -> Menor
-# >= -> Maior igual
-# <= -> Menor igual
+# == -> Igual a
+# != -> Diferente de
+# > -> Maior que
+# < -> Menor que
+# >= -> Maior e igual a
+# <= -> Menor e igual a
 
